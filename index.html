@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width = device-width, initial-scale=1" charset="utf-8">
+    <meta name='mobile-web-app-capable' content='yes'>
+    <meta name="author" content="Marcelo Narváez">
+    <meta name="description" content="JQuery Mobile realizado por: Marcelo Narváez">	
+	<title> JQuery Mobile </title>
+
+
+	<link href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.css" rel="stylesheet" type="text/css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+
+	<script src="js/jquery-1.11.1.js" type="text/javascript" ></script>
+	<script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.js" type="text/javascript"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABsl1w8u6gbtCRGWhsGFRsM7w4UpSmxKE" type="text/javascript"></script>
+	<script src="js/function.js" type="text/javascript"></script>
+</head>
+<body>
+
+	<div data-role="page" id="pageHome">
+		<div data-role="header">
+			<h1>Gestión Hotel</h1>
+		</div>
+		<div data-role="content">
+			<form>
+
+				<a id="RegistroHotel" data-role="button" class="ui-btn ui-icon-tag ui-btn-icon-right ui-shadow-icon ui-overlay-shadow ui-corner-all">Registrar Hotel</a>
+				<a id="ListaHoteles" data-role="button" class="ui-btn ui-icon-bars ui-btn-icon-right ui-shadow-icon ui-overlay-shadow ui-corner-all">Lista Hoteles</a>
+			</form>
+		</div>
+		<div data-role="footer">
+			<p align="center">Gestión Hotel</p>
+		</div>
+	</div>
+	
+	<div data-role="page" id="pageRegistro">
+		<div data-role="header">
+			<h1>Registro de Hotel</h1>
+		</div>
+		<div data-role="content">
+			<form>
+				<div class="ui-field-contain">
+					<label for="nombre">Nombre:</label>
+			    	<input type="text" name="nombreH" id="nombreH" class=" ui-overlay-shadow" placeholder="Localizar Hotel en el mapa">
+				</div>
+				<div class="ui-field-contain">
+					<label for="ubicacion">Ubicación:</label>
+				</div>
+				<div data-role="content" id="Mapa" class="ui-overlay-shadow ui-corner-all">
+				</div>
+				<div class="ui-field-contain">
+					<label for="ciudad">Ciudad:</label>
+					<input type="text" name="ciudadH" id="ciudadH" class="ui-overlay-shadow" placeholder="Nombre de la ciudad...">
+				</div>
+				<div class="ui-field-contain">
+					<label for="telefono">Telefono:</label>
+					<input type="text" name="telefonoH" id="telefonoH" class="ui-overlay-shadow" placeholder="Número de telefono..." >
+				</div>
+				<div class="ui-field-contain">
+					<label for="estrellas">Estrellas:</label>
+					<input type="number" name="estrellasH" id="estrellasH" class="ui-overlay-shadow" max="10" min="1" value="">
+				</div>
+				<a id="GuardarHotel" class="ui-btn ui-icon-check ui-btn-icon-right ui-overlay-shadow ui-btn-active ui-corner-all">Agregar Hotel</a>
+				<a class="ui-btn regresarHome ui-icon-home ui-btn-icon-right ui-shadow-icon ui-overlay-shadow ui-corner-all">Home</a>
+			</form>
+		</div>
+	</div>
+
+	<div data-role="page" id="pageHoteles">
+		<div data-role="header">
+			<h1>Lista de Hoteles</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview" id="contenedorLista" data-inset="true">
+			</ul>
+		</div>
+		<div data-role="content">
+			<a class="ui-btn regresarHome ui-icon-home ui-btn-icon-right ui-shadow-icon ui-overlay-shadow ui-corner-all">Home</a>
+		</div>
+		<div data-role="footer">
+			<p align="center">Lista de Hoteles</p>
+		</div>
+	</div>
+
+	<div data-role="page" id="pageHotel">
+		<div data-role="header">
+			<h1>Datos del Hotel</h1>
+		</div>
+		<div data-role="content">
+			<p><strong>Nombre: </strong><span id="NombreInfo"></span></p>
+			<p><strong>Ciudad: </strong><span id="CiudadInfo"></span></p>
+			<p><strong>Telefono: </strong><span id="TelefonoInfo"></span></p>
+			<p><strong>Estrella: </strong><span id="EstrellasInfo"></span></p>
+			<p><strong>Ubicación: </strong><span id="UbicacionInfo"></span></p>
+			<div data-role="content" id="MapaHotel">
+		    </div>
+		</div>
+		<div data-role="content">
+			<a class="ui-btn regresarHoteles ui-overlay-shadow ui-corner-all ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-back">Lista Hoteles</a>
+		</div>
+	</div>
+</body>
+</html>
